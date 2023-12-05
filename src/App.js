@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Content from './components/Content';
+import SideBar from './components/SideBar';
 import './App.css';
 
 function App() {
+  const menuList = [
+    { text: 'Home', url: '/' },
+    { text: 'About Us', url: '/about' },
+    { text: 'Contact', url: '/contact' },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header title="Header" />
+      <div className="main-content">
+        <SideBar title="SideBar" menuList={menuList} />
+        <Content title="Content" />
+      </div>
+      <Footer title="Footer" menuList={menuList} />
     </div>
   );
 }
