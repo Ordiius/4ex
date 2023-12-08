@@ -6,4 +6,8 @@
     bottom: 0;
     width: 100%;
   }
-  
+
+.footer ul {
+  display: flex;
+  gap: 30px;
+}
